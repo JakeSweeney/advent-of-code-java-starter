@@ -3,6 +3,7 @@ package aoc.day02;
 import aoc.day01.Day01;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
