@@ -8,7 +8,13 @@ public class Day02 implements Day {
 
     @Override
     public String part1(List<String> input) {
-        return input.isEmpty() ? "" : input.get(0);
+        Integer totalValue = 0;
+
+        for (String round : input) {
+            totalValue +=1;
+        }
+
+        return totalValue.toString();
     }
 
     @Override
