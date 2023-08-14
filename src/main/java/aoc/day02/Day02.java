@@ -11,7 +11,13 @@ public class Day02 implements Day {
         Integer totalValue = 0;
         Integer ourMoveValue = 0;
         for (String round : input) {
-            totalValue +=1;
+            String ourMove= String.valueOf(round.charAt(2));
+            if (ourMove == "X"){
+                ourMoveValue = 1;
+            } else {
+                ourMoveValue = 2;
+            }
+            totalValue +=ourMoveValue;
         }
 
         return totalValue.toString();
