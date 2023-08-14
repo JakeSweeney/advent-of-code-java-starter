@@ -43,7 +43,39 @@ public class Day02Test {
         // Then
         assertEquals("15", result);
     }
+    @Test
+    public void testOneRoundLosingWithRock(){
+        // Given
+        List<String> input = Arrays.asList(new String [] {"B X"});
+        // When
+        Day02 testSubject = new Day02();
+        String result = testSubject.part1(input);
 
+        // Then
+        assertEquals("1", result);
+    }
+    @Test
+    public void testOneRoundLosingWithPaper(){
+        // Given
+        List<String> input = Arrays.asList(new String [] {"C Y"});
+        // When
+        Day02 testSubject = new Day02();
+        String result = testSubject.part1(input);
+
+        // Then
+        assertEquals("2", result);
+    }
+    @Test
+    public void testMultipleRoundsLosingWithRock(){
+        // Given
+        List<String> input = Arrays.asList(new String [] {"B X", "B X"});
+        // When
+        Day02 testSubject = new Day02();
+        String result = testSubject.part1(input);
+
+        // Then
+        assertEquals("2", result);
+    }
 //    @Test
 //    public void testPart2(){
 //        // Given
