@@ -15,7 +15,7 @@ public class Day02Test {
 
     @Test
     @Ignore
-    public void adventOfCodeExample(){
+    public void testPart1AdventOfCodeExample(){
         // Given
         List<String> input = Arrays.asList(new String [] {"A Y", "B X", "C Z"});
         // When
