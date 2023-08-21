@@ -12,7 +12,7 @@ public class Day02 implements Day {
         Integer ourMoveValue = 0;
         for (String round : input) {
             String ourMove= String.valueOf(round.charAt(2));
-            if (ourMove == "X"){
+            if (ourMove.equals("X")){
                 ourMoveValue = 1;
             } else {
                 ourMoveValue = 2;
