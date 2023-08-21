@@ -58,20 +58,16 @@ public class Day02Test {
         // Then
         assertEquals("2", result);
     }
-//    @Test
-//    public void testPart2(){
-//        // Given
-//        int scoreBoard[] = ;
-//        for (:
-//             ) {
-//
-//        }
-//        List<String> input = Collections.singletonList("test");
-//
-//        // When
-//        String result = new Day02().part2(input);
-//
-//        // Then
-//        assertEquals(input.get(0), result);
-//    }
+    @Test
+    @Ignore
+    public void testPart2AdventOfCodeExample(){
+        // Given
+        List<String> input = Collections.singletonList("test");
+
+        // When
+        String result = new Day02().part2(input);
+
+        // Then
+        assertEquals(input.get(0), result);
+    }
 }

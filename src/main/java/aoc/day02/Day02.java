@@ -9,17 +9,15 @@ public class Day02 implements Day {
     @Override
     public String part1(List<String> input) {
         Integer totalValue = 0;
-        Integer ourMoveValue = 0;
+
         for (String round : input) {
             String ourMove= String.valueOf(round.charAt(2));
             if (ourMove.equals("X")){
-                ourMoveValue = 1;
+                totalValue += 1;
             } else {
-                ourMoveValue = 2;
+                totalValue += 2;
             }
-            totalValue +=ourMoveValue;
         }
-
         return totalValue.toString();
     }
 
