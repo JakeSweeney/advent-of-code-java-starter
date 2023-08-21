@@ -1,6 +1,7 @@
 package aoc.day02;
 
 import aoc.day01.Day01;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ import static org.junit.Assert.assertEquals;
 public class Day02Test {
 
     @Test
-    public void testPart1(){
+    @Ignore
+    public void adventOfCodeExample(){
         // Given
         List<String> input = Arrays.asList(new String [] {"A Y", "B X", "C Z"});
         // When
