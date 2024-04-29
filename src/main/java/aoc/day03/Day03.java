@@ -3,6 +3,7 @@ package aoc.day03;
 import aoc.Day;
 
 import java.util.List;
+import java.util.Set;
 
 public class Day03 implements Day {
 
@@ -11,8 +12,16 @@ public class Day03 implements Day {
         // for each rucksack
         for (String rucksack: input) {
             String [] compartments = rucksackSplitter(rucksack);
+
             // split rucksack into two compartments
+
+
             // identify the item that is in both compartments
+
+            Set<String> Compartment1 = Set.of(compartments[0].split(""));
+            Set<String> Compartment2 = Set.of(compartments[1].split(""));
+            Compartment1.retainAll(Compartment2);
+
             // add the priority of the item to the total priority
         }
         // return the sum of the priorities

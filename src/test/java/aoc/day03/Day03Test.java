@@ -1,10 +1,7 @@
 package aoc.day03;
-
 import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class Day03Test {
@@ -19,8 +16,6 @@ public class Day03Test {
                 "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
                 "ttgJtRGJQctTZtZT",
                 "CrZsJsPPZsGzwwsLwLmpwMDw");
-
-
         // act / when
         // when we call part1(input)
         String result = target.part1(input);
@@ -29,7 +24,6 @@ public class Day03Test {
         // then the result is 157
         assertEquals("157", result);
     }
-
     @Test
     public void testPartOneRucksackSplitter() {
         Day03 target = new Day03();
@@ -40,8 +34,6 @@ public class Day03Test {
         String[] expectedCompartments = new String[] {"vJrwpWtwJgWr","hcsFMMfFFhFp"};
         assertEquals(expectedCompartments , result);
     }
-
-
     @Test
     public void testPartOneRucksackSplitterAnotherInput() {
         Day03 target = new Day03();
