@@ -17,12 +17,19 @@ public class Day03 implements Day {
 
 
             // identify the item that is in both compartments
+            compartment1.retainAll(compartment2);
+            Optional<String> possibleItem = compartment1.stream().findFirst();
+            if (possibleItem.isPresent()) {
+                String item = possibleItem.get(); // safe because we know it will have one item
 
-            Set<String> Compartment1 = Set.of(compartments[0].split(""));
-            Set<String> Compartment2 = Set.of(compartments[1].split(""));
-            Compartment1.retainAll(Compartment2);
+                // add the priority of the item to the total priority
 
-            // add the priority of the item to the total priority
+            }
+            else {
+                throw new IllegalStateException("There should always be an overlapping item, and one was not found.");
+            }
+
+
         }
         // return the sum of the priorities
         return "";
@@ -37,6 +44,14 @@ public class Day03 implements Day {
     public String[] rucksackSplitter(String rucksack) {
         int rucksackLength = rucksack.length();
         return new String[] {rucksack.substring(0,(rucksackLength/2)), rucksack.substring((rucksackLength/2),rucksackLength)};
+    }
+
+    public int priorityCalculator(String item){
+        Character itemValue = item.charAt(0);
+        if(Character.isUpperCase(itemValue)){
+            
+        }
+
     }
 }
 //substring, 2 parameters, first and last position
