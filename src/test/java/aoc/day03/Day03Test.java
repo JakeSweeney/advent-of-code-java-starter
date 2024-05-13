@@ -45,4 +45,16 @@ public class Day03Test {
         assertEquals(expectedCompartments , result);
     }
 
+    @Test
+    public void priorityCalculator() {
+        Day03 target = new Day03();
+        assertEquals(10,target.priorityCalculator("j"));
+        assertEquals(1,target.priorityCalculator("a"));
+        assertEquals(11,target.priorityCalculator("k"));
+        assertEquals(5,target.priorityCalculator("e"));
+        assertEquals(36,target.priorityCalculator("J"));
+        assertEquals(27,target.priorityCalculator("A"));
+        assertEquals(37,target.priorityCalculator("K"));
+        assertEquals(31,target.priorityCalculator("E"));
+    }
 }

@@ -22,7 +22,7 @@ public class Day03 implements Day {
             if (possibleItem.isPresent()) {
                 String item = possibleItem.get(); // safe because we know it will have one item
 
-                // add the priority of the item to the total priority
+                totalPriority += priorityCalculator(item);
 
             }
             else {
@@ -49,9 +49,11 @@ public class Day03 implements Day {
     public int priorityCalculator(String item){
         Character itemValue = item.charAt(0);
         if(Character.isUpperCase(itemValue)){
-            
+            return itemValue - 'A' + PRIORITY_OF_UPPER_CASE_A;
+        } else
+        {
+            return itemValue - 'a' + PRIORITY_OF_LOWER_CASE_A;
         }
-
     }
 }
 //substring, 2 parameters, first and last position
