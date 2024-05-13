@@ -2,19 +2,23 @@ package aoc.day03;
 
 import aoc.Day;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Day03 implements Day {
 
+    public static final int PRIORITY_OF_UPPER_CASE_A = 27;
+    public static final int PRIORITY_OF_LOWER_CASE_A = 1;
+
     @Override
     public String part1(List<String> input) {
+        int totalPriority = 0;
         // for each rucksack
         for (String rucksack: input) {
-            String [] compartments = rucksackSplitter(rucksack);
-
             // split rucksack into two compartments
-
+            String [] compartments = rucksackSplitter(rucksack);
+            Set<String> compartment1 = Arrays.stream(compartments[0].split("")).collect(Collectors.toSet());
+            Set<String> compartment2 = Arrays.stream(compartments[1].split("")).collect(Collectors.toSet());
 
             // identify the item that is in both compartments
             compartment1.retainAll(compartment2);
@@ -32,7 +36,7 @@ public class Day03 implements Day {
 
         }
         // return the sum of the priorities
-        return "";
+        return String.valueOf(totalPriority);
     }
 
 
@@ -48,6 +52,7 @@ public class Day03 implements Day {
 
     public int priorityCalculator(String item){
         Character itemValue = item.charAt(0);
+        // in ASCII 'a' is 97, 'A' is 65
         if(Character.isUpperCase(itemValue)){
             return itemValue - 'A' + PRIORITY_OF_UPPER_CASE_A;
         } else
