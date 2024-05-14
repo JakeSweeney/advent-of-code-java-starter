@@ -1,20 +1,18 @@
 package aoc.day02;
 
-import aoc.day01.Day01;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Day02Test {
 
     @Test
-    @Ignore
+    @Disabled
     public void testPart1AdventOfCodeExample(){
         // Given
         List<String> input = Arrays.asList(new String [] {"A Y", "B X", "C Z"});
@@ -59,7 +57,7 @@ public class Day02Test {
         assertEquals("2", result);
     }
     @Test
-    @Ignore
+    @Disabled
     public void testPart2AdventOfCodeExample(){
         // Given
         List<String> input = Collections.singletonList("test");

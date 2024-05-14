@@ -1,8 +1,11 @@
 package aoc.day03;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Day03Test {
     @Test
@@ -32,7 +35,7 @@ public class Day03Test {
         String[] result = target.rucksackSplitter(rucksack);
 
         String[] expectedCompartments = new String[] {"vJrwpWtwJgWr","hcsFMMfFFhFp"};
-        assertEquals(expectedCompartments , result);
+        assertArrayEquals(expectedCompartments , result);
     }
     @Test
     public void testPartOneRucksackSplitterAnotherInput() {
@@ -42,7 +45,7 @@ public class Day03Test {
         String[] result = target.rucksackSplitter(rucksack);
 
         String[] expectedCompartments = new String[] {"abc","def"};
-        assertEquals(expectedCompartments , result);
+        assertArrayEquals(expectedCompartments , result);
     }
 
     @Test
