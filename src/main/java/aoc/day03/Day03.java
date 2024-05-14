@@ -5,8 +5,17 @@ import aoc.Day;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Day03 implements Day {
 
+public class Day03 extends Day {
+
+    static {
+        currentDay = new Day03();
+    }
+
+    public Day03() {
+        super(3);
+    }
+    
     public static final int PRIORITY_OF_UPPER_CASE_A = 27;
     public static final int PRIORITY_OF_LOWER_CASE_A = 1;
 
