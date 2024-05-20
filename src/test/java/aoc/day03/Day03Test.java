@@ -1,9 +1,11 @@
 package aoc.day03;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -60,4 +62,18 @@ public class Day03Test {
         assertEquals(37,target.priorityCalculator("K"));
         assertEquals(31,target.priorityCalculator("E"));
     }
+    @Test
+    public void partTwoExample()
+    {
+        List<String> input = Arrays.asList(
+                "vJrwpWtwJgWrhcsFMMfFFhFp",
+                "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+                "PmmdzqPrVvPwwTWBwg",
+                "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+                "ttgJtRGJQctTZtZT",
+                "CrZsJsPPZsGzwwsLwLmpwMDw"
+        );
+        assertThat(new Day03().part2(input)).isEqualTo("70");
+    }
+
 }
