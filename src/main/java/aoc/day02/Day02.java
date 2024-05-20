@@ -4,8 +4,15 @@ import aoc.Day;
 
 import java.util.List;
 
-public class Day02 implements Day {
+public class Day02 extends Day {
 
+    static {
+        currentDay = new Day02();
+    }
+
+    public Day02() {
+        super(2);
+    }
     @Override
     public String part1(List<String> input) {
         Integer totalValue = 0;
