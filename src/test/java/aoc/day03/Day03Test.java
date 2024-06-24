@@ -49,6 +49,14 @@ public class Day03Test {
         String[] expectedCompartments = new String[] {"abc","def"};
         assertArrayEquals(expectedCompartments , result);
     }
+    @Test
+    public void partTwoIntermediateExampleTestOne()
+    {
+        List<String> input = Arrays.asList("vJrwpWtwJgWrhcsFMMfFFhFp",
+                "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+                "PmmdzqPrVvPwwTWBwg");
+        assertThat(new Day03().part2(input)).isEqualTo("18");
+    }
 
     @Test
     public void priorityCalculator() {

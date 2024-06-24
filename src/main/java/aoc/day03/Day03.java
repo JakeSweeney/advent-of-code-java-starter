@@ -2,6 +2,7 @@ package aoc.day03;
 
 import aoc.Day;
 
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -26,22 +27,16 @@ public class Day03 extends Day {
         for (String rucksack: input) {
             // split rucksack into two compartments
             String [] compartments = rucksackSplitter(rucksack);
-            Set<String> compartment1 = Arrays.stream(compartments[0].split("")).collect(Collectors.toSet());
-            Set<String> compartment2 = Arrays.stream(compartments[1].split("")).collect(Collectors.toSet());
+            Set<String> compartment1 = getSet(compartments[0]);
+            Set<String> compartment2 = getSet(compartments[1]);
 
             // identify the item that is in both compartments
             compartment1.retainAll(compartment2);
             Optional<String> possibleItem = compartment1.stream().findFirst();
-            if (possibleItem.isPresent()) {
-                String item = possibleItem.get(); // safe because we know it will have one item
+            String item = possibleItem.orElseThrow(() -> new IllegalStateException("There should always be an overlapping item, and one was not found.")); // safe because we know it will have one item
+//                String item = possibleItem.orElseThrow(IllegalStateException::new); // this is the method reference version, but we can’t pass in a message this way
 
-                totalPriority += priorityCalculator(item);
-
-            }
-            else {
-                throw new IllegalStateException("There should always be an overlapping item, and one was not found.");
-            }
-
+            totalPriority += priorityCalculator(item);
 
         }
         // return the sum of the priorities
@@ -51,7 +46,24 @@ public class Day03 extends Day {
 
     @Override
     public String part2(List<String> input) {
-        return "";
+        int priorityValue = 0;
+        for(int index = 0; index < input.size(); index += 3)
+        {
+            Set<String> rucksack1 = getSet(input.get(index));
+            Set<String> rucksack2 = getSet(input.get(index + 1));
+            Set<String> rucksack3 = getSet(input.get(index + 2));
+            rucksack1.retainAll(rucksack2);
+            rucksack1.retainAll(rucksack3);
+            assert rucksack1.size() == 1;
+            Optional<String> possibleItem = rucksack1.stream().findFirst();
+            String item = possibleItem.orElseThrow(() -> new IllegalStateException("There should always be an overlapping item, and one was not found."));
+            priorityValue += priorityCalculator(item);
+        }
+        return String.valueOf(priorityValue);
+    }
+
+    private static Set<String> getSet(String input) {
+        return Arrays.stream(input.split("")).collect(Collectors.toSet());
     }
 
     public String[] rucksackSplitter(String rucksack) {
