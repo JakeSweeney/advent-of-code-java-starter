@@ -34,15 +34,4 @@ public class Day04 extends Day {
         return lowerBoundOne<lowerBoundTwo && upperBoundOne > upperBoundTwo;
     }
 
-    /*
-    Create method to help with D4P1
-
-    - [ ] add some more test cases for isRangeContained method
-        - [ ] consider range two containing range one
-        - [ ] consider overlapping but not contained ranges
-    - [ ] use isRangeContained method in the part1 method
-    - [ ] refactor to use classes
-
-     */
-
 }
