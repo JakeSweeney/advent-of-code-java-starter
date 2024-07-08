@@ -9,6 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class Day04Test {
+    Day04 target = new Day04();
 
     @Test
     @Disabled
@@ -25,11 +26,13 @@ class Day04Test {
 
     @Test
     void rangeContained() {
-        Assertions.assertThat(new Day04().isRangeContained(2, 8, 3, 7)).isTrue();
+        assertThat(target.isRangeContained(2, 8, 3, 7)).isTrue();
+        assertThat(target.isRangeContained(3, 7, 2, 8)).isTrue();
     }
 
     @Test
     void rangeNotContained() {
-        Assertions.assertThat(new Day04().isRangeContained(2, 6, 4, 8)).isFalse();
+        assertThat(target.isRangeContained(2, 3, 4, 5)).isFalse();
+        assertThat(target.isRangeContained(2, 6, 4, 8)).isFalse();
     }
 }

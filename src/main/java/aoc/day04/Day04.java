@@ -29,9 +29,10 @@ public class Day04 extends Day {
         return null;
     }
 
-
     public boolean isRangeContained(int lowerBoundOne, int upperBoundOne, int lowerBoundTwo, int upperBoundTwo) {
-        return lowerBoundOne<lowerBoundTwo && upperBoundOne > upperBoundTwo;
+        boolean firstRangeContainsSecond = lowerBoundOne < lowerBoundTwo && upperBoundOne > upperBoundTwo;
+        boolean secondRangeContainsFirst = lowerBoundTwo < lowerBoundOne && upperBoundTwo > upperBoundOne;
+        return firstRangeContainsSecond || secondRangeContainsFirst;
     }
 
 }
