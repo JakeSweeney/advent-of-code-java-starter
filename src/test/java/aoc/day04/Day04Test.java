@@ -25,14 +25,22 @@ class Day04Test {
     }
 
     @Test
-    void rangeContained() {
+    void rangeOneContainsRangeTwo() {
         assertThat(target.isRangeContained(2, 8, 3, 7)).isTrue();
+    }
+
+    @Test
+    void rangeTwoContainsRangeOne() {
         assertThat(target.isRangeContained(3, 7, 2, 8)).isTrue();
     }
 
     @Test
-    void rangeNotContained() {
+    void neitherRangeContainsOrOverlapsOtherRange() {
         assertThat(target.isRangeContained(2, 3, 4, 5)).isFalse();
+    }
+
+    @Test
+    void rangesOverlapButDoNotContainEachOther() {
         assertThat(target.isRangeContained(2, 6, 4, 8)).isFalse();
     }
 }
